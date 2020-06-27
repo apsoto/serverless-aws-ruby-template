@@ -1,0 +1,9 @@
+{
+  "name": "serverless-aws-ruby-template",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "devDependencies": {
+    "serverless-ruby-package": "^1.4.0"
+  }
+}
