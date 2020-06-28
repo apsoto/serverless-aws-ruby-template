@@ -13,7 +13,8 @@ The template comes configured with:
 
 Initialize your project using this template
 
-    sls create --name my-project --template-url https://github.com/apsoto/serverless-aws-ruby-template/tree/develop/template
+    # master is the most recent released version
+    sls create --name my-project --template-url https://github.com/apsoto/serverless-aws-ruby-template/tree/master/template
 
 Install Dependencies:
 
