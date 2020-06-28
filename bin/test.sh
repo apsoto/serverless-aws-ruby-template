@@ -5,12 +5,14 @@ set -euo pipefail
 IFS=$'\n\t'
 # set -x # uncomment to echo commands to assist debug
 
+TEMPLATE_PATH=${1:-$(pwd)/template}
+SERVICE_NAME="my-service"
 
 pushd /tmp
-pwd
-rm -rf my-service
-sls create --template-path /Users/asoto/projects/apsoto/serverless-aws-ruby-template/template -n my-service
-cd my-service
+
+rm -rf "$SERVICE_NAME"
+sls create --template-path "$TEMPLATE_PATH" -n "$SERVICE_NAME"
+cd "$SERVICE_NAME"
 npm install
 bundle config set path --local 'vendor/bundle'
 bundle install --standalone

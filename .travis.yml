@@ -1,0 +1,11 @@
+language: generic
+before_install:
+  - rvm get stable
+  - rvm --version
+  - rvm install ruby-2.7
+  - rvm use 2.7
+  - nvm install 12
+  - nvm use 12
+install:
+  - npm install -g serverless
+script: ./bin/test.sh
