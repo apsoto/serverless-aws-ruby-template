@@ -23,7 +23,17 @@ Install Dependencies:
     bundle config set path --local 'vendor/bundle'
     bundle install --standalone
 
+Setup binstub for vscode spec debugging
+
+    bundle binstubs rspec-core
+
 Confirm Setup
 
     bundle exec rake
     sls package
+
+## VSCode Debugging
+
+If you installed the rspec binstub as the setup instructions recommended, you can set break points and debug from within VSCode.
+
+Open your project in VSCode, open the generated sample spec, and go to the 'Run | Start Debugging' menu.  You will see the rspec output in the Debug Console window.
