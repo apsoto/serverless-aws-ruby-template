@@ -1,0 +1,17 @@
+on: push
+jobs:
+  build:
+    strategy:
+      matrix:
+        ruby: [2.7]
+        node-version: [12.x]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install serverless
+
+      - name: Test
+        run: ./bin/test.sh

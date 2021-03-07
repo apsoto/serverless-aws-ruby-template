@@ -11,14 +11,14 @@ SERVICE_NAME="my-service"
 pushd /tmp
 
 rm -rf "$SERVICE_NAME"
-sls create --template-path "$TEMPLATE_PATH" -n "$SERVICE_NAME"
+./node_modules/.bin/sls create --template-path "$TEMPLATE_PATH" -n "$SERVICE_NAME"
 cd "$SERVICE_NAME"
 npm install
 bundle config set path --local 'vendor/bundle'
 bundle install --standalone
 bundle exec rubocop
 bundle exec rake
-sls package
-sls invoke local -f hello
+./node_modules/.bin/sls package
+./node_modules/.bin/sls invoke local -f hello
 
 popd
